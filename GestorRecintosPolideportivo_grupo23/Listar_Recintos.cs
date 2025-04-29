@@ -40,7 +40,7 @@ namespace GestorRecintosPolideportivo_grupo23
 
             DataGridViewTextBoxColumn colTipo = new DataGridViewTextBoxColumn();
             colTipo.Name = "TipoRecinto";
-            colTipo.DataPropertyName = "TipoRecinto.NombreTipoRecinto"; // Puede necesitar formateo
+            colTipo.DataPropertyName = "TipoRecinto.NombreTipoRecinto";
             colTipo.HeaderText = "Tipo";
             dataGridViewRecintos.Columns.Add(colTipo);
 

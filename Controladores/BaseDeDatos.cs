@@ -14,6 +14,7 @@ namespace Controladores
 
         public BaseDeDatos()
         {
+
             cadenaConexion = "Server=DESKTOP-250LNCS\\SQLEXPRESS;Database=polideportivoDev;Trusted_Connection=True;";
         }
 

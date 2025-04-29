@@ -8,7 +8,7 @@ namespace Controladores
     {
         private readonly BaseDeDatos db = new BaseDeDatos();
 
-        public Usuario ValidarLogin(int dni, string password)
+        public Usuario verificar_datos(int dni, string password)
         {
             Usuario usuario = null;
 

@@ -15,7 +15,7 @@ namespace GestorRecintosPolideportivo_grupo23
             usuario_controlador = new Usuario_Controlador();
         }
 
-        private void btnIngresar_Click(object sender, EventArgs e)
+        private void iniciar_sesion(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtDNI.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
             {
@@ -31,7 +31,7 @@ namespace GestorRecintosPolideportivo_grupo23
 
             string password = txtPassword.Text;
 
-            Usuario usuario = usuario_controlador.ValidarLogin(dni, password);
+            Usuario usuario = usuario_controlador.verificar_datos(dni, password);
 
             if (usuario != null)
             {

@@ -87,8 +87,8 @@ namespace Controladores
                         {
                             recintos.Add(new Recinto
                             {
-                                NumeroRecinto = (int)reader["nro_recinto"], // tu PK real
-                                Tarifa = Convert.ToDecimal(reader["tarifa_hora"]), // convierto de FLOAT a decimal
+                                NumeroRecinto = (int)reader["nro_recinto"],
+                                Tarifa = Convert.ToDecimal(reader["tarifa_hora"]), //convierto de FLOAT a decimal
                                 Ubicacion = reader["ubicacion_recinto"].ToString(),
                                 Habilitado = (bool)reader["habilitado"],
                                 TipoRecinto = new Tipo_De_Recinto
