@@ -3,7 +3,7 @@ using Modelos;
 using System;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace GestorRecintosPolideportivo_grupo23
 {
     public partial class Login : Form
     {

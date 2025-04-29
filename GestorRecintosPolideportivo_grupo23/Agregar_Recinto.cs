@@ -59,7 +59,7 @@ namespace GestorRecintosPolideportivo_grupo23
                 LimpiarCampos();
                 this.Close();
             }
-            else if(resultado_validacion==-1)
+            else if (resultado_validacion == -1)
             {
                 MessageBox.Show("ya existe recinto con ese numero", "Inserción fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

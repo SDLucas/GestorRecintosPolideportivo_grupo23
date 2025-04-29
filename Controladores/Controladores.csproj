@@ -41,10 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BaseDeDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recinto_Controlador.cs" />
     <Compile Include="Tipo_De_Recinto_Controlador.cs" />
+    <Compile Include="Usuario_Controlador.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modelos\Modelos.csproj">
+      <Project>{b947a748-9d90-4616-b664-25086fb57896}</Project>
+      <Name>Modelos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
