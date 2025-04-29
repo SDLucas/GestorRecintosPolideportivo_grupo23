@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace GestorRecintosPolideportivo_grupo23
 {
     partial class Agregar_Recinto
     {
