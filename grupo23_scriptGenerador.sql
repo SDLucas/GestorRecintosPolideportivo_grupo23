@@ -97,3 +97,87 @@ insert into Usuario (DNI_Usuario,Nombre_Usuario,Apellido_Usuario,Fecha_Ingreso,F
 (42450489,'Fernando','Romero','2021-06-15','2021-06-15','recep','3794149452',2,'hombre');
 
 select * from usuario;
+
+--creacion de procedimientos almacenados
+-- Agregar recinto
+CREATE PROCEDURE sp_AgregarRecinto
+    @nro_recinto INT,
+    @tarifa_hora FLOAT,
+    @ubicacion_recinto VARCHAR(200),
+    @id_tipo_recinto INT
+AS
+BEGIN
+    INSERT INTO Recinto (nro_recinto, tarifa_hora, ubicacion_recinto, id_tipo_recinto)
+    VALUES (@nro_recinto, @tarifa_hora, @ubicacion_recinto, @id_tipo_recinto);
+END;
+
+-- Obtener todos los recintos
+CREATE PROCEDURE sp_ObtenerTodosLosRecintos
+AS
+BEGIN
+    SELECT r.nro_recinto, r.tarifa_hora, r.ubicacion_recinto, r.habilitado,
+           t.id_tipo_recinto, t.nombre_tipo_recinto
+    FROM Recinto r
+    INNER JOIN Tipo_Recinto t ON r.id_tipo_recinto = t.id_tipo_recinto;
+END;
+
+-- Obtener recinto por número
+CREATE PROCEDURE sp_ObtenerRecintoPorNumero
+    @nro_recinto INT
+AS
+BEGIN
+    SELECT r.nro_recinto, r.tarifa_hora, r.ubicacion_recinto, r.habilitado,
+           t.id_tipo_recinto, t.nombre_tipo_recinto
+    FROM Recinto r
+    INNER JOIN Tipo_Recinto t ON r.id_tipo_recinto = t.id_tipo_recinto
+    WHERE r.nro_recinto = @nro_recinto;
+END;
+
+-- Habilitar recinto
+CREATE PROCEDURE sp_HabilitarRecinto
+    @nro_recinto INT
+AS
+BEGIN
+    UPDATE Recinto SET habilitado = 1 WHERE nro_recinto = @nro_recinto;
+END;
+
+-- Deshabilitar recinto
+CREATE PROCEDURE sp_DeshabilitarRecinto
+    @nro_recinto INT
+AS
+BEGIN
+    UPDATE Recinto SET habilitado = 0 WHERE nro_recinto = @nro_recinto;
+END;
+
+-- Actualizar recinto
+CREATE PROCEDURE sp_ActualizarRecinto
+    @nro_recinto INT,
+    @tarifa_hora FLOAT,
+    @ubicacion_recinto VARCHAR(200),
+    @id_tipo_recinto INT
+AS
+BEGIN
+    UPDATE Recinto
+    SET tarifa_hora = @tarifa_hora,
+        ubicacion_recinto = @ubicacion_recinto,
+        id_tipo_recinto = @id_tipo_recinto
+    WHERE nro_recinto = @nro_recinto;
+END;
+
+CREATE OR ALTER PROCEDURE sp_ListarTiposDeRecinto
+AS
+BEGIN
+    SELECT id_tipo_recinto, nombre_tipo_recinto
+    FROM Tipo_Recinto;
+END;
+
+CREATE OR ALTER PROCEDURE sp_VerificarUsuarioLogin
+    @dni INT,
+    @pass NVARCHAR(100)
+AS
+BEGIN
+    SELECT *
+    FROM Usuario
+    WHERE DNI_Usuario = @dni AND pass = @pass;
+END;
+
