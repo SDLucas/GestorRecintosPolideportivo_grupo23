@@ -1,4 +1,5 @@
-﻿using Modelos;
+﻿using Controladores;
+using Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,7 +52,7 @@ namespace GestorRecintosPolideportivo_grupo23
             }
             String ubicacion = txtUbicacion.Text;
             int id_tipo = ((Tipo_De_Recinto)cbTipoRecinto.SelectedItem).id_tipo_recinto;
-            int resultado_validacion = recinto_controlador.validar_datos(numero, tarifa, id_tipo, ubicacion);
+            int resultado_validacion = Recinto_Controlador.verificar_recinto(numero);
             if (resultado_validacion == 0)
             {
                 recinto_controlador.agregar_recinto(numero, tarifa, ubicacion, id_tipo);
@@ -72,7 +73,7 @@ namespace GestorRecintosPolideportivo_grupo23
         }
         private void LimpiarCampos()
         {
-            txtNumero.Clear();
+            txtNumero.Clear();  
             txtTarifa.Clear();
             txtUbicacion.Clear();
             cbTipoRecinto.SelectedIndex = -1;

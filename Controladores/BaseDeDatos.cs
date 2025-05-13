@@ -1,22 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace Controladores
 {
-    public class BaseDeDatos
+    public static class BaseDeDatos
     {
-        private static string cadenaConexion;
-
-        public BaseDeDatos()
-        {
-
-            cadenaConexion = "Server=DESKTOP-250LNCS\\SQLEXPRESS;Database=polideportivoDev;Trusted_Connection=True;";
-        }
+        // Cadena de conexión inicializada directamente
+        private static readonly string cadenaConexion = "Server=DESKTOP-250LNCS\\SQLEXPRESS;Database=polideportivoDev;Trusted_Connection=True;";
 
         public static SqlConnection ObtenerConexion()
         {

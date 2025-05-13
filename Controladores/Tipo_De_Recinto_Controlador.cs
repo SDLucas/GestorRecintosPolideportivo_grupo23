@@ -2,28 +2,22 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Controladores
 {
     public class Tipo_De_Recinto_Controlador
     {
-        private readonly BaseDeDatos db = new BaseDeDatos();
-
-        // Método para traer dinámicamente los tipos de recinto
-        public List<Modelos.Tipo_De_Recinto> listar_tipo_recinto()
+        public List<Tipo_De_Recinto> listar_tipo_recinto()
         {
             List<Tipo_De_Recinto> tipos = new List<Tipo_De_Recinto>();
 
             using (var conexion = BaseDeDatos.ObtenerConexion())
             {
                 conexion.Open();
-                string query = "SELECT id_tipo_recinto, nombre_tipo_recinto FROM Tipo_Recinto";
-
-                using (var comando = new SqlCommand(query, conexion))
+                using (var comando = new SqlCommand("sp_ListarTiposDeRecinto", conexion))
                 {
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+
                     using (var reader = comando.ExecuteReader())
                     {
                         while (reader.Read())

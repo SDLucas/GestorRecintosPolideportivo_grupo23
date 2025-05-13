@@ -6,8 +6,6 @@ namespace Controladores
 {
     public class Usuario_Controlador
     {
-        private readonly BaseDeDatos db = new BaseDeDatos();
-
         public Usuario verificar_datos(int dni, string password)
         {
             Usuario usuario = null;
@@ -15,10 +13,10 @@ namespace Controladores
             using (var conexion = BaseDeDatos.ObtenerConexion())
             {
                 conexion.Open();
-                string query = @"SELECT * FROM Usuario WHERE DNI_Usuario = @dni AND pass = @pass";
-
-                using (var cmd = new SqlCommand(query, conexion))
+                using (var cmd = new SqlCommand("sp_VerificarUsuarioLogin", conexion))
                 {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
                     cmd.Parameters.AddWithValue("@dni", dni);
                     cmd.Parameters.AddWithValue("@pass", password);
 
