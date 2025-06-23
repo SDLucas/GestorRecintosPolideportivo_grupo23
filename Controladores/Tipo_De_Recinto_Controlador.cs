@@ -11,7 +11,7 @@ namespace Controladores
         {
             List<Tipo_De_Recinto> tipos = new List<Tipo_De_Recinto>();
 
-            using (var conexion = BaseDeDatos.ObtenerConexion())
+            using (var conexion = BaseDeDatos.Instancia.ObtenerConexion())
             {
                 conexion.Open();
                 using (var comando = new SqlCommand("sp_ListarTiposDeRecinto", conexion))
@@ -30,6 +30,7 @@ namespace Controladores
                         }
                     }
                 }
+                conexion.Close();
             }
 
             return tipos;

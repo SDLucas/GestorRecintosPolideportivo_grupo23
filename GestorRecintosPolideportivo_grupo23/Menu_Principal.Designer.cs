@@ -46,6 +46,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.lblTipoUsuario = new System.Windows.Forms.Label();
+            this.btnBaja = new System.Windows.Forms.Button();
             this.panelRecintos.SuspendLayout();
             this.panelReservas.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -79,7 +80,7 @@
             // 
             // btnAgregarRecinto
             // 
-            this.btnAgregarRecinto.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnAgregarRecinto.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnAgregarRecinto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarRecinto.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnAgregarRecinto.ForeColor = System.Drawing.Color.White;
@@ -114,6 +115,7 @@
             this.btnProgramarReserva.TabIndex = 2;
             this.btnProgramarReserva.Text = "Programar Reserva";
             this.btnProgramarReserva.UseVisualStyleBackColor = false;
+            this.btnProgramarReserva.Click += new System.EventHandler(this.btnProgramarReserva_Click);
             // 
             // btnListarReservas
             // 
@@ -127,6 +129,7 @@
             this.btnListarReservas.TabIndex = 3;
             this.btnListarReservas.Text = "Listar Reservas";
             this.btnListarReservas.UseVisualStyleBackColor = false;
+            this.btnListarReservas.Click += new System.EventHandler(this.btnListarReservas_Click);
             // 
             // lblTitulo
             // 
@@ -187,6 +190,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Agregar Cliente";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -200,6 +204,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Listar Clientes";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 
@@ -224,6 +229,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Cobrar Reserva";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -237,6 +243,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Listar Pagos";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // lblTipoUsuario
             // 
@@ -247,7 +254,20 @@
             this.lblTipoUsuario.Size = new System.Drawing.Size(200, 20);
             this.lblTipoUsuario.TabIndex = 5;
             this.lblTipoUsuario.Text = "Recepcionista";
-            this.lblTipoUsuario.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // btnBaja
+            // 
+            this.btnBaja.BackColor = System.Drawing.Color.Firebrick;
+            this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaja.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.btnBaja.ForeColor = System.Drawing.Color.White;
+            this.btnBaja.Location = new System.Drawing.Point(118, 404);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(90, 34);
+            this.btnBaja.TabIndex = 6;
+            this.btnBaja.Text = "Dar de baja";
+            this.btnBaja.UseVisualStyleBackColor = false;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // Menu_Principal
             // 
@@ -255,6 +275,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(854, 450);
+            this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.lblTipoUsuario);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -284,5 +305,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label lblTipoUsuario;
+        private System.Windows.Forms.Button btnBaja;
     }
 }

@@ -11,7 +11,7 @@ namespace Controladores
         {
             try
             {
-                using (SqlConnection conexion = BaseDeDatos.ObtenerConexion())
+                using (SqlConnection conexion = BaseDeDatos.Instancia.ObtenerConexion())
                 {
                     using (SqlCommand comando = new SqlCommand("sp_AgregarRecinto", conexion))
                     {
@@ -23,7 +23,11 @@ namespace Controladores
                         comando.Parameters.AddWithValue("@id_tipo_recinto", id_tipo);
 
                         conexion.Open();
-                        return comando.ExecuteNonQuery();
+
+                        int resultado = comando.ExecuteNonQuery();
+                        conexion.Close();
+
+                        return resultado;
                     }
                 }
             }
@@ -41,19 +45,17 @@ namespace Controladores
             return obtener_recinto_por_numero(numero) == null ? 0 : -1;
         }
 
-
-        public List<Recinto> ObtenerTodosLosRecintos()
+        public List<Recinto> listar_recintos_habilitados()
         {
             List<Recinto> recintos = new List<Recinto>();
 
 
-            using (SqlConnection conexion = BaseDeDatos.ObtenerConexion())
+            using (SqlConnection conexion = BaseDeDatos.Instancia.ObtenerConexion())
             {
-                using (SqlCommand comando = new SqlCommand("sp_ObtenerTodosLosRecintos", conexion))
+                using (SqlCommand comando = new SqlCommand("sp_ObtenerRecintosHabilitados", conexion))
                 {
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
                     conexion.Open();
-
                     using (SqlDataReader reader = comando.ExecuteReader())
                     {
                         while (reader.Read())
@@ -61,7 +63,7 @@ namespace Controladores
                             recintos.Add(new Recinto
                             {
                                 NumeroRecinto = (int)reader["nro_recinto"],
-                                Tarifa = Convert.ToDecimal(reader["tarifa_hora"]),
+                                Tarifa = (float)(double)reader["tarifa_hora"],
                                 Ubicacion = reader["ubicacion_recinto"].ToString(),
                                 Habilitado = (bool)reader["habilitado"],
                                 TipoRecinto = new Tipo_De_Recinto
@@ -72,6 +74,43 @@ namespace Controladores
                             });
                         }
                     }
+                    conexion.Close();
+                }
+            }
+
+            return recintos;
+        }
+
+        public List<Recinto> listar_recintos()
+        {
+            List<Recinto> recintos = new List<Recinto>();
+
+
+            using (SqlConnection conexion = BaseDeDatos.Instancia.ObtenerConexion())
+            {
+                using (SqlCommand comando = new SqlCommand("sp_ObtenerTodosLosRecintos", conexion))
+                {
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    conexion.Open();
+                    using (SqlDataReader reader = comando.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            recintos.Add(new Recinto
+                            {
+                                NumeroRecinto = (int)reader["nro_recinto"],
+                                Tarifa = (float)(double)reader["tarifa_hora"],
+                                Ubicacion = reader["ubicacion_recinto"].ToString(),
+                                Habilitado = (bool)reader["habilitado"],
+                                TipoRecinto = new Tipo_De_Recinto
+                                {
+                                    id_tipo_recinto = (int)reader["id_tipo_recinto"],
+                                    nombre_tipo_recinto = reader["nombre_tipo_recinto"].ToString()
+                                }
+                            });
+                        }
+                    }
+                    conexion.Close();
                 }
             }
 
@@ -82,7 +121,7 @@ namespace Controladores
         {
             Recinto recinto = null;
 
-            using (SqlConnection conexion = BaseDeDatos.ObtenerConexion())
+            using (SqlConnection conexion = BaseDeDatos.Instancia.ObtenerConexion())
             {
                 using (SqlCommand cmd = new SqlCommand("sp_ObtenerRecintoPorNumero", conexion))
                 {
@@ -97,7 +136,7 @@ namespace Controladores
                             recinto = new Recinto
                             {
                                 NumeroRecinto = (int)reader["nro_recinto"],
-                                Tarifa = Convert.ToDecimal(reader["tarifa_hora"]),
+                                Tarifa = (float)(double)reader["tarifa_hora"],
                                 Ubicacion = reader["ubicacion_recinto"].ToString(),
                                 Habilitado = (bool)reader["habilitado"],
                                 TipoRecinto = new Tipo_De_Recinto
@@ -108,6 +147,7 @@ namespace Controladores
                             };
                         }
                     }
+                    conexion.Close();
                 }
             }
 
@@ -116,28 +156,32 @@ namespace Controladores
 
         public void HabilitarRecintoPorNumero(int numeroRecinto)
         {
-            using (SqlConnection conexion = BaseDeDatos.ObtenerConexion())
+            using (SqlConnection conexion = BaseDeDatos.Instancia.ObtenerConexion())
             {
                 using (SqlCommand cmd = new SqlCommand("sp_HabilitarRecinto", conexion))
                 {
+                    conexion.Open();
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@nro_recinto", numeroRecinto);
-                    conexion.Open();
+
                     cmd.ExecuteNonQuery();
+                    conexion.Close();
                 }
             }
         }
 
         public void DeshabilitarRecintoPorNumero(int numeroRecinto)
         {
-            using (SqlConnection conexion = BaseDeDatos.ObtenerConexion())
+            using (SqlConnection conexion = BaseDeDatos.Instancia.ObtenerConexion())
             {
                 using (SqlCommand cmd = new SqlCommand("sp_DeshabilitarRecinto", conexion))
                 {
+                    conexion.Open();
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@nro_recinto", numeroRecinto);
-                    conexion.Open();
+                    
                     cmd.ExecuteNonQuery();
+                    conexion.Close();
                 }
             }
         }
@@ -146,8 +190,9 @@ namespace Controladores
         {
             try
             {
-                using (SqlConnection conexion = BaseDeDatos.ObtenerConexion())
+                using (SqlConnection conexion = BaseDeDatos.Instancia.ObtenerConexion())
                 {
+                    conexion.Open();
                     using (SqlCommand cmd = new SqlCommand("sp_ActualizarRecinto", conexion))
                     {
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -156,9 +201,10 @@ namespace Controladores
                         cmd.Parameters.AddWithValue("@ubicacion_recinto", ubicacion);
                         cmd.Parameters.AddWithValue("@id_tipo_recinto", id_tipo_recinto);
 
-                        conexion.Open();
+                        
                         cmd.ExecuteNonQuery();
                     }
+                    conexion.Close();
                 }
 
                 return 0;

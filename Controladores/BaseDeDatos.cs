@@ -2,12 +2,32 @@
 
 namespace Controladores
 {
-    public static class BaseDeDatos
+    public class BaseDeDatos
     {
-        // Cadena de conexión inicializada directamente
-        private static readonly string cadenaConexion = "Server=DESKTOP-250LNCS\\SQLEXPRESS;Database=polideportivoDev;Trusted_Connection=True;";
+        private static BaseDeDatos _instancia;
+        private static readonly object _lock = new object();
+        private readonly string cadenaConexion = "Server=DESKTOP-250LNCS\\SQLEXPRESS;Database=polideportivoDev;Trusted_Connection=True;";
 
-        public static SqlConnection ObtenerConexion()
+        // Constructor privado para Singleton
+        private BaseDeDatos() { }
+
+        // Propiedad pública para acceder a la instancia
+        public static BaseDeDatos Instancia
+        {
+            get
+            {
+                lock (_lock)
+                {
+                    if (_instancia == null)
+                        _instancia = new BaseDeDatos();
+
+                    return _instancia;
+                }
+            }
+        }
+
+        // Retorna una nueva conexión lista para usar
+        public SqlConnection ObtenerConexion()
         {
             return new SqlConnection(cadenaConexion);
         }

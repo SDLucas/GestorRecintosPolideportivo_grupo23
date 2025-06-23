@@ -27,7 +27,7 @@ namespace GestorRecintosPolideportivo_grupo23
 
         private void CargarRecintos()
         {
-            listaRecintos = recinto_controlador.ObtenerTodosLosRecintos();
+            listaRecintos = recinto_controlador.listar_recintos();
             dataGridViewRecintos.AutoGenerateColumns = false;
             dataGridViewRecintos.Columns.Clear();
 

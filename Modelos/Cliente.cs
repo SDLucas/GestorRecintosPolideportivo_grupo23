@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Modelos
+﻿namespace Modelos
 {
     public class Cliente
     {
-        int dni;
-        String nombre_cliente;
-        String apellido_cliente;
-        String telefono;
+        public int id_cliente { get; set; }
+        public int dni_cliente { get; set; }
+        public string nombre_cliente { get; set; }
+        public string apellido_cliente { get; set; }
+        public string telefono_cliente { get; set; }
+
+        public override string ToString()
+        {
+            return nombre_cliente+" "+apellido_cliente+", DNI:"+dni_cliente;
+        }
     }
 }

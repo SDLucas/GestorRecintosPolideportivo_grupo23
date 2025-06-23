@@ -25,31 +25,44 @@ namespace GestorRecintosPolideportivo_grupo23
             cbTipoRecinto.DataSource = tipo_controlador.listar_tipo_recinto();
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private bool validarCamposRecinto(String numero, String tarifa, String ubicacion, Tipo_De_Recinto tipo)
         {
             // Validar que todos los campos estén completos
-            if (string.IsNullOrWhiteSpace(txtNumero.Text) ||
-                string.IsNullOrWhiteSpace(txtTarifa.Text) ||
-                string.IsNullOrWhiteSpace(txtUbicacion.Text) ||
-                cbTipoRecinto.SelectedItem == null)
+            if (string.IsNullOrWhiteSpace(numero) ||
+                string.IsNullOrWhiteSpace(tarifa) ||
+                string.IsNullOrWhiteSpace(ubicacion) ||
+                tipo == null)
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
 
             // Validar que el número de cancha sea un número válido
-            if (!int.TryParse(txtNumero.Text, out int numero))
+            if (!int.TryParse(txtNumero.Text, out int num))
             {
-                MessageBox.Show("El número de recinto debe ser un número entero válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show("Revise el formato de los campos ingresados", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
 
             // Validar que la tarifa sea un número decimal válido
-            if (!decimal.TryParse(txtTarifa.Text, out decimal tarifa))
+            if (!decimal.TryParse(txtTarifa.Text, out decimal tar))
             {
-                MessageBox.Show("La tarifa debe ser un número válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Revise el formato de los campos ingresados", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void botonAgregarRecintoClick(object sender, EventArgs e)
+        {
+            if (validarCamposRecinto(txtNumero.Text,txtTarifa.Text,txtUbicacion.Text, (Tipo_De_Recinto)cbTipoRecinto.SelectedItem) != true)
+            {
                 return;
             }
+            decimal.TryParse(txtTarifa.Text, out decimal tarifa);
+            int.TryParse(txtNumero.Text, out int numero);
+
             String ubicacion = txtUbicacion.Text;
             int id_tipo = ((Tipo_De_Recinto)cbTipoRecinto.SelectedItem).id_tipo_recinto;
             int resultado_validacion = Recinto_Controlador.verificar_recinto(numero);

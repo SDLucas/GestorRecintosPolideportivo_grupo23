@@ -8,11 +8,15 @@ namespace Modelos
 {
     public class Recinto
     {
-        public int IdRecinto { get; set; }
         public int NumeroRecinto { get; set; }
-        public decimal Tarifa { get; set; }
+        public float Tarifa { get; set; }
         public string Ubicacion { get; set; }
         public bool Habilitado { get; set; }
         public Tipo_De_Recinto TipoRecinto { get; set; }
+
+        public override string ToString()
+        {
+            return "n° " + NumeroRecinto + " - " + TipoRecinto.nombre_tipo_recinto;
+        }
     }
 }

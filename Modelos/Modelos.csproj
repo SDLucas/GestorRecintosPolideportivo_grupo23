@@ -42,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
+    <Compile Include="Medio_Pago.cs" />
+    <Compile Include="Pago.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recinto.cs" />
+    <Compile Include="Reserva.cs" />
+    <Compile Include="Sesion.cs" />
     <Compile Include="Tipo_De_Recinto.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>

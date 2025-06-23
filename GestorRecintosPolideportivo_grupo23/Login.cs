@@ -2,6 +2,7 @@
 using Modelos;
 using System;
 using System.Windows.Forms;
+using Vistas;
 
 namespace GestorRecintosPolideportivo_grupo23
 {
@@ -32,6 +33,9 @@ namespace GestorRecintosPolideportivo_grupo23
             string password = txtPassword.Text;
 
             Usuario usuario = usuario_controlador.verificar_datos(dni, password);
+            
+            //Se guarda la sesion en una variable global
+            Sesion.UsuarioActual = usuario;
 
             if (usuario != null)
             {
