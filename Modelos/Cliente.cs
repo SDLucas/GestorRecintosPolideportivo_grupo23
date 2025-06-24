@@ -10,6 +10,7 @@
 
         public bool estado_cliente { get; set; }
 
+        //sobreescritura del método ToString para correcta visualización en los combobox
         public override string ToString()
         {
             return nombre_cliente+" "+apellido_cliente+", DNI:"+dni_cliente;

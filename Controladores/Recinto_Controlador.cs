@@ -7,6 +7,7 @@ namespace Controladores
 {
     public class Recinto_Controlador
     {
+        //llamada a procedimiento almacenado para agregar un recinto
         public int agregar_recinto(int numero, decimal tarifa, string ubicacion, int id_tipo)
         {
             try
@@ -39,12 +40,12 @@ namespace Controladores
                     throw new Exception("Error en la base de datos: " + ex.Message);
             }
         }
-
+        //llamada al procedimiento almacenado para verificar si un recinto existe
         public static int verificar_recinto(int numero)
         {
             return obtener_recinto_por_numero(numero) == null ? 0 : -1;
         }
-
+        //llamada al procedimiento almacenado para listar los recintos habilitados
         public List<Recinto> listar_recintos_habilitados()
         {
             List<Recinto> recintos = new List<Recinto>();
@@ -80,7 +81,7 @@ namespace Controladores
 
             return recintos;
         }
-
+        //llamada al procedimiento almacenado para listar todos los recintos, incluyendo los inhabilitados
         public List<Recinto> listar_recintos()
         {
             List<Recinto> recintos = new List<Recinto>();
@@ -116,7 +117,7 @@ namespace Controladores
 
             return recintos;
         }
-
+        //llamada al procedimiento almacenado para obtener un recinto por su número
         public static Recinto obtener_recinto_por_numero(int numeroRecinto)
         {
             Recinto recinto = null;
@@ -153,7 +154,7 @@ namespace Controladores
 
             return recinto;
         }
-
+        //llamada al procedimiento almacenado para dar alta logica de un recinto por su número
         public void HabilitarRecintoPorNumero(int numeroRecinto)
         {
             using (SqlConnection conexion = BaseDeDatos.Instancia.ObtenerConexion())
@@ -169,7 +170,7 @@ namespace Controladores
                 }
             }
         }
-
+        //llamada al procedimiento almacenado para dar baja logica de un recinto por su número
         public void DeshabilitarRecintoPorNumero(int numeroRecinto)
         {
             using (SqlConnection conexion = BaseDeDatos.Instancia.ObtenerConexion())
@@ -185,7 +186,7 @@ namespace Controladores
                 }
             }
         }
-
+        //llamada al procedimiento almacenado para actualizar un recinto
         public int actualizar_recinto(int numeroRecinto, decimal tarifa, string ubicacion, int id_tipo_recinto)
         {
             try

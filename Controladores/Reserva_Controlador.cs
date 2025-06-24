@@ -8,6 +8,7 @@ namespace Controladores
 {
     public class Reserva_Controlador
     {
+        //llamada al procedimiento almacenado para agregar una reserva
         public int agregar_reserva(DateTime fecha, int id_cliente, int nro_recinto, int id_usuario, int hora)
         {
             using (SqlConnection conexion = BaseDeDatos.Instancia.ObtenerConexion())
@@ -33,7 +34,7 @@ namespace Controladores
 
             }
         }
-
+        //llamada al procedimiento almacenado para listar todas las reservas, inclutendo reservas canceladas
         public List<Reserva> listar_reservas()
         {
             List<Reserva> reservas = new List<Reserva>();
@@ -73,6 +74,7 @@ namespace Controladores
 
             return reservas;
         }
+        //llamada al procedimiento almacenado para obtener las horas reservadas en un recinto en una fecha específica
         public List<int> ObtenerHorasReservadas(int nro_recinto, DateTime fecha)
         {
             List<int> horas = new List<int>();
@@ -98,7 +100,7 @@ namespace Controladores
 
             return horas;
         }
-
+        //llamada al procedimiento almacenado para cancelar una reserva
         public int cancelar_reserva(int id_reserva)
         {
             int resultado;
@@ -113,7 +115,7 @@ namespace Controladores
                 return resultado;
             }
         }
-
+        //llamada al procedimiento almacenado para actualizar una reserva
         public int actualizar_reserva(int id_reserva, DateTime fecha, int hora, int id_cliente, int nro_recinto)
         {
             int resultado;
@@ -133,7 +135,7 @@ namespace Controladores
             }
             
         }
-
+        //llamada al procedimiento almacenado para obtener una reserva por su ID
         public Reserva obtener_reserva_por_id(int id_reserva)
         {
             Reserva reserva = null;
@@ -170,8 +172,7 @@ namespace Controladores
 
             return reserva;
         }
-
-
+        //llamada al procedimiento almacenado para listar las reservas no pagadas
         public List<Reserva> listar_reservas_no_pagadas()
         {
             List<Reserva> reservas = new List<Reserva>();
@@ -204,7 +205,8 @@ namespace Controladores
 
             return reservas;
         }
-
+        //llamada al procedimiento almacenado para verificar si existe una reserva en un horario específico
+        //excluyendo una reserva específica para evitar conflictos al actualizar
         public bool existe_reserva_en_horario(DateTime fecha, int hora, int nro_recinto, int id_reserva_a_excluir)
         {
             using (SqlConnection conexion = BaseDeDatos.Instancia.ObtenerConexion())

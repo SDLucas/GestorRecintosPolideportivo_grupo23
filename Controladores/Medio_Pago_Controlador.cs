@@ -11,6 +11,7 @@ namespace Controladores
 {
     public class Medio_Pago_Controlador
     {
+        //llamada al procedimiento almacenado para listar todos los medios de pago
         public List<Medio_Pago> listar_medios_pago()
         {
             List<Medio_Pago> medios = new List<Medio_Pago>();

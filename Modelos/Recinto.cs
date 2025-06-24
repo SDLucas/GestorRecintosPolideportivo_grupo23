@@ -13,14 +13,9 @@ namespace Modelos
         public string ubicacion_recinto { get; set; }
         public bool habilitado { get; set; }
         public Tipo_De_Recinto tipo_recinto { get; set; }
-        public string NombreTipoRecinto
-        {
-            get
-            {
-                return tipo_recinto != null ? tipo_recinto.nombre_tipo_recinto : "";
-            }
-        }
+        
 
+        //sobreescritura del método ToString para correcta visualización en los combobox
         public override string ToString()
         {
             return "n° " + nro_recinto + " - " + tipo_recinto.nombre_tipo_recinto;
@@ -29,5 +24,12 @@ namespace Modelos
         public int NumeroRecinto => nro_recinto;
         public float Tarifa => tarifa_hora;
         public string Ubicacion => ubicacion_recinto;
+        public string NombreTipoRecinto
+        {
+            get
+            {
+                return tipo_recinto != null ? tipo_recinto.nombre_tipo_recinto : "";
+            }
+        }
     }
 }

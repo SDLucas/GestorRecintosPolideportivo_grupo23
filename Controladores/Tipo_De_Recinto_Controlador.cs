@@ -7,6 +7,7 @@ namespace Controladores
 {
     public class Tipo_De_Recinto_Controlador
     {
+        //llamada al procedimiento almacenado para listar todos los tipos de recinto
         public List<Tipo_De_Recinto> listar_tipo_recinto()
         {
             List<Tipo_De_Recinto> tipos = new List<Tipo_De_Recinto>();

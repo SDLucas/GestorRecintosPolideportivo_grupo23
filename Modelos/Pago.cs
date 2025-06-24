@@ -19,6 +19,7 @@ namespace Modelos
             public float monto_pago { get; set; }
             public DateTime fecha_pago { get; set; }
 
+            //propiedades para correcta visualización de los datos en el DataGridView
             public string nombre_cliente { get; set; }
             public string apellido_cliente { get; set; }
 

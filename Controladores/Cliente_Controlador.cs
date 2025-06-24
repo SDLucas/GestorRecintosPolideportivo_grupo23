@@ -7,6 +7,7 @@ namespace Controladores
 {
     public class Cliente_Controlador
     {
+        //llamada a procedimiento almacenado para agregar un cliente
         public int agregar_cliente(int dni, string nombre, string apellido, string telefono)
         {
             using (SqlConnection conexion = BaseDeDatos.Instancia.ObtenerConexion())
@@ -30,7 +31,7 @@ namespace Controladores
                 }
             }
         }
-
+        //llamada al procedimiento almacenado para listar todos los clientes, incluyendo clientes inactivos
         public List<Cliente> listar_clientes()
         {
             List<Cliente> clientes = new List<Cliente>();
@@ -62,7 +63,7 @@ namespace Controladores
 
             return clientes;
         }
-
+        //llamada al procedimiento almacenado para modificar un cliente
         public int modificar_cliente(Cliente cliente)
         {
             int resultado;
@@ -83,7 +84,7 @@ namespace Controladores
             }
             return resultado;
         }
-
+        //llamada al procedimiento almacenado para listar solo los clientes activos
         public List<Cliente> ListarClientesActivos()
         {
             List<Cliente> lista = new List<Cliente>();
@@ -113,7 +114,7 @@ namespace Controladores
 
             return lista;
         }
-
+        //llamada al procedimiento almacenado para dar de baja logica a un cliente mediante su id
         public void DarBajaCliente(int id)
         {
             using (var conexion = BaseDeDatos.Instancia.ObtenerConexion())
@@ -125,7 +126,7 @@ namespace Controladores
                 cmd.ExecuteNonQuery();
             }
         }
-
+        //llamada al procedimiento almacenado para dar de alta logica a un cliente mediante su id
         public void DarAltaCliente(int id)
         {
             using (var conexion = BaseDeDatos.Instancia.ObtenerConexion())

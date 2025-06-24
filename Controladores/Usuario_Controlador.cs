@@ -7,7 +7,7 @@ namespace Controladores
 {
     public class Usuario_Controlador
     {
-
+        //llamada al procedimiento almacenado para registrar un usuario
         public int dar_baja_usuario(int idUsuario)
         {
             int resultado;
@@ -22,7 +22,7 @@ namespace Controladores
             return resultado;
         }
 
-
+        //llamada al procedimiento almacenado para verificar los datos de un usuario
         public Usuario verificar_datos(int dni, string password)
         {
             Usuario usuario = null;

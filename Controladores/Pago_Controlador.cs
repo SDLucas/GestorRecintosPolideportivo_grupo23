@@ -8,6 +8,7 @@ namespace Controladores
 {
     public class Pago_Controlador
     {
+        //llamada al procedimiento almacenado para registrar un pago
         public int registrar_pago(int id_reserva, int id_usuario, int id_medio, float monto)
         {
             int resultado;
@@ -25,6 +26,7 @@ namespace Controladores
             }
             return resultado;
         }
+        //llamada al procedimiento almacenado para listar todos los pagos
         public List<Pago> listar_pagos()
         {
             List<Pago> pagos = new List<Pago>();

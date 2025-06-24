@@ -14,6 +14,7 @@ namespace Modelos
         public bool pagado { get; set; }
         public bool estado { get; set; }
 
+        //propiedades calculadas para visualización correcta en los datagridview
         public string EstadoTexto
         {
             get { if (estado == true) {
