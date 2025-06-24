@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registrar_Pago));
             this.cbMedioPago = new System.Windows.Forms.ComboBox();
             this.lblMonto = new System.Windows.Forms.Label();
             this.btnCobrar = new System.Windows.Forms.Button();
@@ -79,6 +80,7 @@
             this.Controls.Add(this.btnCobrar);
             this.Controls.Add(this.lblMonto);
             this.Controls.Add(this.cbMedioPago);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registrar_Pago";
             this.Text = "FormularioPago";
             this.ResumeLayout(false);

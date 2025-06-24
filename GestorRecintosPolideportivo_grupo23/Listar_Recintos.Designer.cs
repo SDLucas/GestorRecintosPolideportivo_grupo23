@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Listar_Recintos));
             this.dataGridViewRecintos = new System.Windows.Forms.DataGridView();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnRefrescar = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.dataGridViewRecintos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Listar_Recintos";
             this.Text = "Listar Recintos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRecintos)).EndInit();

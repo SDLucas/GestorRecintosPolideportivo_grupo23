@@ -31,6 +31,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Listar_Reservas));
             this.dataGridViewReservas = new System.Windows.Forms.DataGridView();
             this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservas)).BeginInit();
@@ -64,6 +65,7 @@
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dataGridViewReservas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Listar_Reservas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Reservas";

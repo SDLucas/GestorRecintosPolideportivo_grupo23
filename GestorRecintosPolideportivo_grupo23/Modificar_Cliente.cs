@@ -48,7 +48,8 @@ namespace Vistas
                 dni_cliente = dni,
                 nombre_cliente = txtNombre.Text.Trim(),
                 apellido_cliente = txtApellido.Text.Trim(),
-                telefono_cliente = txtTelefono.Text.Trim()
+                telefono_cliente = txtTelefono.Text.Trim(),
+                estado_cliente = clienteOriginal.estado_cliente
             };
 
             int resultado = controlador.modificar_cliente(clienteModificado);

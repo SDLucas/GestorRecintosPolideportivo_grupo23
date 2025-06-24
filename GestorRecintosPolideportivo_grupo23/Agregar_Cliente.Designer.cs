@@ -37,6 +37,7 @@ namespace WindowsFormsApp1
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agregar_Cliente));
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -133,6 +134,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.btnGuardar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Agregar_Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Cliente";

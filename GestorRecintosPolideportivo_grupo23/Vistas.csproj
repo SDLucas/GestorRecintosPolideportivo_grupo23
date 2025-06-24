@@ -136,11 +136,20 @@
     <EmbeddedResource Include="Agregar_Cliente.resx">
       <DependentUpon>Agregar_Cliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_Recinto.resx">
+      <DependentUpon>Agregar_Recinto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Agregar_Reserva.resx">
       <DependentUpon>Agregar_Reserva.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listar_Clientes.resx">
+      <DependentUpon>Listar_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listar_Pagos.resx">
       <DependentUpon>Listar_Pagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listar_Recintos.resx">
+      <DependentUpon>Listar_Recintos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listar_Reservas.resx">
       <DependentUpon>Listar_Reservas.cs</DependentUpon>
@@ -150,6 +159,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Principal.resx">
       <DependentUpon>Menu_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_Cliente.resx">
+      <DependentUpon>Modificar_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_Recinto.resx">
+      <DependentUpon>Modificar_Recinto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_Reserva.resx">
+      <DependentUpon>Modificar_Reserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -185,6 +203,11 @@
       <Project>{b947a748-9d90-4616-b664-25086fb57896}</Project>
       <Name>Modelos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="polideportivoIcono.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -41,6 +41,7 @@ namespace Vistas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modificar_Cliente));
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -127,6 +128,8 @@ namespace Vistas
             // 
             // Modificar_Cliente
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 260);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.lblApellido);
@@ -137,10 +140,12 @@ namespace Vistas
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.btnGuardar);
-
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Modificar_Cliente";
             this.Text = "Modificar Cliente";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

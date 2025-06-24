@@ -21,7 +21,7 @@ namespace Controladores
                     comando.Parameters.AddWithValue("@nro_recinto", nro_recinto);
                     comando.Parameters.AddWithValue("@id_usuario", id_usuario);
                     comando.Parameters.AddWithValue("@hora_reserva", hora);
-                    comando.Parameters.AddWithValue("@monto_reserva", Recinto_Controlador.obtener_recinto_por_numero(nro_recinto).tarifa_recinto );
+                    comando.Parameters.AddWithValue("@monto_reserva", Recinto_Controlador.obtener_recinto_por_numero(nro_recinto).tarifa_hora );
 
                     conexion.Open();
 

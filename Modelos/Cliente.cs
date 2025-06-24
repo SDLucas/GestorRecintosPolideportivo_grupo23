@@ -8,6 +8,8 @@
         public string apellido_cliente { get; set; }
         public string telefono_cliente { get; set; }
 
+        public bool estado_cliente { get; set; }
+
         public override string ToString()
         {
             return nombre_cliente+" "+apellido_cliente+", DNI:"+dni_cliente;

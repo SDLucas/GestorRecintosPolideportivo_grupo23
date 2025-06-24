@@ -52,7 +52,7 @@ namespace Controladores
                             cliente.nombre_cliente = reader["nombre_cliente"].ToString();
                             cliente.apellido_cliente = reader["apellido_cliente"].ToString();
                             cliente.telefono_cliente = reader["telefono_cliente"].ToString();
-
+                            cliente.estado_cliente = (bool)reader["estado_cliente"];
                             clientes.Add(cliente);
                         }
                     }
@@ -76,12 +76,66 @@ namespace Controladores
                 comando.Parameters.AddWithValue("@nombre_cliente", cliente.nombre_cliente);
                 comando.Parameters.AddWithValue("@apellido_cliente", cliente.apellido_cliente);
                 comando.Parameters.AddWithValue("@telefono_cliente", cliente.telefono_cliente);
-
+                comando.Parameters.AddWithValue("@estado_cliente", cliente.estado_cliente);
                 conexion.Open();
                 resultado = comando.ExecuteNonQuery();
                 conexion.Close();
             }
             return resultado;
+        }
+
+        public List<Cliente> ListarClientesActivos()
+        {
+            List<Cliente> lista = new List<Cliente>();
+
+            using (var conexion = BaseDeDatos.Instancia.ObtenerConexion())
+            {
+                SqlCommand cmd = new SqlCommand("sp_ListarClientesActivos", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conexion.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        lista.Add(new Cliente
+                        {
+                            id_cliente = (int)reader["id_cliente"],
+                            dni_cliente = (int)reader["dni_cliente"],
+                            nombre_cliente = reader["nombre_cliente"].ToString(),
+                            apellido_cliente = reader["apellido_cliente"].ToString(),
+                            telefono_cliente = reader["telefono_cliente"].ToString(),
+                            estado_cliente = (bool)reader["estado_cliente"]
+                        });
+                    }
+                }
+            }
+
+            return lista;
+        }
+
+        public void DarBajaCliente(int id)
+        {
+            using (var conexion = BaseDeDatos.Instancia.ObtenerConexion())
+            {
+                SqlCommand cmd = new SqlCommand("sp_BajaLogicaCliente", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_cliente", id);
+                conexion.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void DarAltaCliente(int id)
+        {
+            using (var conexion = BaseDeDatos.Instancia.ObtenerConexion())
+            {
+                SqlCommand cmd = new SqlCommand("sp_AltaLogicaCliente", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_cliente", id);
+                conexion.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
 
     }

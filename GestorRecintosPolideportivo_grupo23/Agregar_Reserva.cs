@@ -19,7 +19,7 @@ namespace GestorRecintosPolideportivo_grupo23
         private Usuario_Controlador usuarioControlador = new Usuario_Controlador();
         private Reserva_Controlador reservaControlador = new Reserva_Controlador();
 
-        private List<Cliente> listaClientes;
+        private List<Cliente> listaClientesActivos;
         private List<Recinto> listaRecintos;
 
         public static int horaApertura=8;
@@ -36,13 +36,13 @@ namespace GestorRecintosPolideportivo_grupo23
             // Recintos
             listaRecintos = recintoControlador.listar_recintos_habilitados();
             cbRecinto.DataSource = listaRecintos;
-            //No hace falta establecer un campo especifico ya que los modelos sobreescribren ToString()
+            //No hace falta establecer un campo especifico ya que sobrescribi el ToString() del modelo
             //cbRecinto.DisplayMember = "NumeroRecinto";
             //cbRecinto.ValueMember = "NumeroRecinto";
 
             // Clientes
-            listaClientes = clienteControlador.listar_clientes();
-            cbCliente.DataSource = listaClientes;
+            listaClientesActivos = clienteControlador.ListarClientesActivos();
+            cbCliente.DataSource = listaClientesActivos;
             //cbCliente.DisplayMember = "dni_cliente";
             //cbCliente.ValueMember = "id_cliente";
 

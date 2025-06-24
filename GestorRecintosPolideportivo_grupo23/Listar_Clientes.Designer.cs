@@ -34,30 +34,42 @@ namespace WindowsFormsApp1
 
         private void InitializeComponent()
         {
-            this.dataGridViewClientes = new DataGridView();
-            this.btnCerrar = new Button();
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Listar_Clientes));
+            this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             this.SuspendLayout();
-
+            // 
             // dataGridViewClientes
-            dataGridViewClientes.Location = new System.Drawing.Point(12, 12);
-            dataGridViewClientes.Size = new System.Drawing.Size(560, 300);
-            dataGridViewClientes.ReadOnly = true;
-            dataGridViewClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
+            // 
+            this.dataGridViewClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewClientes.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewClientes.Name = "dataGridViewClientes";
+            this.dataGridViewClientes.ReadOnly = true;
+            this.dataGridViewClientes.Size = new System.Drawing.Size(560, 300);
+            this.dataGridViewClientes.TabIndex = 0;
+            // 
             // btnCerrar
-            btnCerrar.Text = "Cerrar";
-            btnCerrar.Location = new System.Drawing.Point(240, 320);
-            btnCerrar.Click += new EventHandler(btnCerrar_Click);
-
-            // Form
-            this.Controls.Add(dataGridViewClientes);
-            this.Controls.Add(btnCerrar);
-            this.Text = "Listado de Clientes";
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(240, 320);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 1;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // Listar_Clientes
+            // 
             this.ClientSize = new System.Drawing.Size(584, 361);
-            this.StartPosition = FormStartPosition.CenterScreen;
-
+            this.Controls.Add(this.dataGridViewClientes);
+            this.Controls.Add(this.btnCerrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Listar_Clientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Listado de Clientes";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion

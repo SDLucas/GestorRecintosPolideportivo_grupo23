@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             formatoMenu();
             CargarPagos();
+            dataGridViewPagos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
 
@@ -38,10 +39,11 @@ namespace WindowsFormsApp1
             dataGridViewPagos.Columns["nombre_cliente"].Visible = false;
             dataGridViewPagos.Columns["apellido_cliente"].Visible = false;
 
-            foreach (DataGridViewColumn col in dataGridViewPagos.Columns)
+            /*foreach (DataGridViewColumn col in dataGridViewPagos.Columns)
             {
                 col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            }
+            }*/ // Ajustar el ancho de las columnas automáticamente, funciona defectuosamente al utilizar
+            //la propiedad fill, por eso lo dejo comentado
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agregar_Recinto));
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.txtTarifa = new System.Windows.Forms.TextBox();
             this.txtUbicacion = new System.Windows.Forms.TextBox();
@@ -128,6 +129,7 @@
             this.Controls.Add(this.txtUbicacion);
             this.Controls.Add(this.txtTarifa);
             this.Controls.Add(this.txtNumero);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Agregar_Recinto";
             this.Text = "Agregar Recinto";
             this.ResumeLayout(false);

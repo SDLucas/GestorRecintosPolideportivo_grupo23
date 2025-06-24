@@ -63,7 +63,7 @@ namespace Controladores
                             recintos.Add(new Recinto
                             {
                                 nro_recinto = (int)reader["nro_recinto"],
-                                tarifa_recinto = (float)(double)reader["tarifa_hora"],
+                                tarifa_hora = (float)(double)reader["tarifa_hora"],
                                 ubicacion_recinto = reader["ubicacion_recinto"].ToString(),
                                 habilitado = (bool)reader["habilitado"],
                                 tipo_recinto = new Tipo_De_Recinto
@@ -99,7 +99,7 @@ namespace Controladores
                             recintos.Add(new Recinto
                             {
                                 nro_recinto = (int)reader["nro_recinto"],
-                                tarifa_recinto = (float)(double)reader["tarifa_hora"],
+                                tarifa_hora = (float)(double)reader["tarifa_hora"],
                                 ubicacion_recinto = reader["ubicacion_recinto"].ToString(),
                                 habilitado = (bool)reader["habilitado"],
                                 tipo_recinto = new Tipo_De_Recinto
@@ -136,7 +136,7 @@ namespace Controladores
                             recinto = new Recinto
                             {
                                 nro_recinto = (int)reader["nro_recinto"],
-                                tarifa_recinto = (float)(double)reader["tarifa_hora"],
+                                tarifa_hora = (float)(double)reader["tarifa_hora"],
                                 ubicacion_recinto = reader["ubicacion_recinto"].ToString(),
                                 habilitado = (bool)reader["habilitado"],
                                 tipo_recinto = new Tipo_De_Recinto

@@ -19,9 +19,9 @@ namespace GestorRecintosPolideportivo_grupo23
 
         public Listar_Recintos()
         {
+            recinto_controlador = new Recinto_Controlador();
             InitializeComponent();
             this.dataGridViewRecintos.CellFormatting += new DataGridViewCellFormattingEventHandler(dataGridViewRecintos_CellFormatting);
-            recinto_controlador = new Recinto_Controlador();
             CargarRecintos();
         }
 

@@ -30,6 +30,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu_Principal));
             this.panelRecintos = new System.Windows.Forms.Panel();
             this.btnListarRecintos = new System.Windows.Forms.Button();
             this.btnAgregarRecinto = new System.Windows.Forms.Button();
@@ -285,6 +286,7 @@
             this.Controls.Add(this.panelRecintos);
             this.Controls.Add(this.btnCerrarSesion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Menu_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

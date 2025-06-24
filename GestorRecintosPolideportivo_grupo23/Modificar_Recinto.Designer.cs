@@ -24,6 +24,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modificar_Recinto));
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.txtTarifa = new System.Windows.Forms.TextBox();
             this.txtUbicacion = new System.Windows.Forms.TextBox();
@@ -122,10 +123,12 @@
             this.Controls.Add(this.txtUbicacion);
             this.Controls.Add(this.txtTarifa);
             this.Controls.Add(this.txtNumero);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Modificar_Recinto";
             this.Text = "Modificar Recinto";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
     }
 }

@@ -31,6 +31,7 @@ namespace GestorRecintosPolideportivo_grupo23
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agregar_Reserva));
             this.cbCliente = new System.Windows.Forms.ComboBox();
             this.cbRecinto = new System.Windows.Forms.ComboBox();
             this.cbHora = new System.Windows.Forms.ComboBox();
@@ -136,6 +137,7 @@ namespace GestorRecintosPolideportivo_grupo23
             this.Controls.Add(this.cbHora);
             this.Controls.Add(this.cbRecinto);
             this.Controls.Add(this.cbCliente);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Agregar_Reserva";
             this.Text = "Agregar Reserva";
             this.ResumeLayout(false);

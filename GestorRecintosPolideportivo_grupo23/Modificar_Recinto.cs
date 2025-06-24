@@ -39,7 +39,7 @@ namespace GestorRecintosPolideportivo_grupo23
                 txtNumero.Text = recinto.nro_recinto.ToString();
                 txtNumero.Enabled = false; // No se puede modificar la PK
 
-                txtTarifa.Text = recinto.tarifa_recinto.ToString();
+                txtTarifa.Text = recinto.tarifa_hora.ToString();
                 txtUbicacion.Text = recinto.ubicacion_recinto;
 
                 // Seleccionar el tipo correspondiente en el ComboBox
