@@ -102,7 +102,15 @@ CREATE TABLE Pago
 
 insert into Tipo_Recinto(nombre_tipo_recinto) values ('cancha de futbol');
 insert into Tipo_Recinto(nombre_tipo_recinto) values ('cancha de padel');
+insert into Tipo_Recinto(nombre_tipo_recinto) values ('cancha de basquet');
+insert into Tipo_Recinto(nombre_tipo_recinto) values ('cancha de voley');
+insert into Tipo_Recinto(nombre_tipo_recinto) values ('cancha de hockey');
+insert into Tipo_Recinto(nombre_tipo_recinto) values ('cancha de rugby');
+insert into Tipo_Recinto(nombre_tipo_recinto) values ('cancha de tenis');
+insert into Tipo_Recinto(nombre_tipo_recinto) values ('ring de boxeo');
 insert into Tipo_Recinto(nombre_tipo_recinto) values ('parrilla');
+insert into Tipo_Recinto(nombre_tipo_recinto) values ('quincho');
+insert into Tipo_Recinto(nombre_tipo_recinto) values ('salon');
 insert into Tipo_Recinto(nombre_tipo_recinto) values ('pileta de natacion');
 
 insert into Medio_Pago(id_medio,nombre_medio) values
