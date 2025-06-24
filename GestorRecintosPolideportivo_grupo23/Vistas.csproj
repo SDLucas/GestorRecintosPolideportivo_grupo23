@@ -145,6 +145,9 @@
     <EmbeddedResource Include="Listar_Reservas.resx">
       <DependentUpon>Listar_Reservas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu_Principal.resx">
       <DependentUpon>Menu_Principal.cs</DependentUpon>
     </EmbeddedResource>

@@ -52,5 +52,11 @@ namespace GestorRecintosPolideportivo_grupo23
                 MessageBox.Show("DNI o contraseña incorrectos.", "Error de Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+
+        }
     }
 }

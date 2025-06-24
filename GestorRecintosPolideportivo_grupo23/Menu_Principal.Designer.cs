@@ -289,6 +289,7 @@
             this.Name = "Menu_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_Principal_FormClosing);
             this.panelRecintos.ResumeLayout(false);
             this.panelReservas.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

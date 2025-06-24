@@ -139,5 +139,11 @@ namespace GestorRecintosPolideportivo_grupo23
                 cerrarSesion();
             }
         }
+
+        private void Menu_Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+
+        }
     }
 }
