@@ -1,4 +1,10 @@
+-- Crear base de datos si no existe y usarla
+IF DB_ID('polideportivoDev') IS NULL
+    CREATE DATABASE polideportivoDev;
+GO
 
+USE polideportivoDev;
+GO
 CREATE TABLE Cliente
 (
   id_cliente INT IDENTITY(1,1) NOT NULL,
@@ -108,9 +114,9 @@ insert into Tipo_Usuario (nombre_Tipo) values ('Administrador'), ('Recepcionista
 select * from Tipo_Usuario
 
 insert into Usuario (DNI_Usuario,Nombre_Usuario,Apellido_Usuario,Fecha_Ingreso,Fecha_Nacimiento,pass,telefono,Id_Tipo,Sexo_Usuario) values
-(1234,'Milton','admin','2021-06-15','2021-06-15','admin','3794149452',2,'hombre'),
+(2,'Recepcionista','Estandar','2021-06-15','2021-06-15','recep','-',2,'hombre'),
 
-(43822713,'Lucas','Scherf','2021-08-09','2001-12-19','admin','3794149452',1,'hombre');
+(1,'Administrador','Estandar','2021-08-09','2001-12-19','admin','-',1,'hombre');
 
 insert into Usuario (DNI_Usuario,Nombre_Usuario,Apellido_Usuario,Fecha_Ingreso,Fecha_Nacimiento,pass,telefono,Id_Tipo,Sexo_Usuario) values
 (42450489,'Fernando','Romero','2021-06-15','2021-06-15','recep','3794149452',2,'hombre');
@@ -459,4 +465,4 @@ BEGIN
 END;
 
 
-select * from usuario;
+select * from usuario
