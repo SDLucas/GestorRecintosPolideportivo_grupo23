@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Controladores
 {
@@ -6,7 +7,10 @@ namespace Controladores
     {
         private static BaseDeDatos _instancia;
         private static readonly object _lock = new object();
-        private readonly string cadenaConexion = "Server=DESKTOP-250LNCS\\SQLEXPRESS;Database=polideportivoDev;Trusted_Connection=True;";
+        //private readonly string cadenaConexion = "Server=DESKTOP-250LNCS\\SQLEXPRESS;Database=polideportivoDev;Trusted_Connection=True;";
+        private readonly string cadenaConexion = ConfigurationManager.ConnectionStrings["conexionBD"].ConnectionString;
+
+
 
         // Constructor privado para Singleton
         private BaseDeDatos() { }

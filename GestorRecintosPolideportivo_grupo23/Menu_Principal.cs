@@ -32,8 +32,8 @@ namespace GestorRecintosPolideportivo_grupo23
             InitializeComponent();
             usuarioActual = usuarioLogueado;
             usuario_Controlador = new Usuario_Controlador();
-            lblUsuarioLogueado.Text = $"Bienvenido, {usuarioActual.Nombre_Usuario} {usuarioActual.Apellido_Usuario}";
-            if (usuarioActual.Id_Tipo == 1)
+            lblUsuarioLogueado.Text = $"Bienvenido, {usuarioActual.nombre_usuario} {usuarioActual.apellido_usuario}";
+            if (usuarioActual.id_tipo == 1)
             {
                 lblTipoUsuario.Text = "Administrador";
             }
@@ -128,14 +128,14 @@ namespace GestorRecintosPolideportivo_grupo23
         private void btnBaja_Click(object sender, EventArgs e)
         {
             string inputPass = Microsoft.VisualBasic.Interaction.InputBox("Ingrese su contraseña para confirmar la baja:", "Confirmar baja");
-            var usuarioVerificado = usuario_Controlador.verificar_datos(Sesion.UsuarioActual.DNI_Usuario, inputPass);
+            var usuarioVerificado = usuario_Controlador.verificar_datos(Sesion.UsuarioActual.dni_usuario, inputPass);
             if (string.IsNullOrEmpty(inputPass) || usuarioVerificado==null)
             {
                 MessageBox.Show("Contraseña incorrecta.");
                 return;
             }else
             {
-                usuario_Controlador.dar_baja_usuario(Sesion.UsuarioActual.id_Usuario);
+                usuario_Controlador.dar_baja_usuario(Sesion.UsuarioActual.id_usuario);
                 cerrarSesion();
             }
         }

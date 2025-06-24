@@ -117,7 +117,7 @@ namespace WindowsFormsApp1
 
             cbRecinto.DataSource = recintoControlador.listar_recintos();
             cbRecinto.DisplayMember = "NumeroRecinto";
-            cbRecinto.ValueMember = "NumeroRecinto";
+            cbRecinto.ValueMember = "nro_recinto";
             cbRecinto.SelectedValue = reservaActual.nro_recinto;
 
             cbCliente.DropDownStyle = ComboBoxStyle.DropDownList;

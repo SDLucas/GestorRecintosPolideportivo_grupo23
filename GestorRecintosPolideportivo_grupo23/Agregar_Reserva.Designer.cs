@@ -137,6 +137,7 @@ namespace GestorRecintosPolideportivo_grupo23
             this.Controls.Add(this.cbRecinto);
             this.Controls.Add(this.cbCliente);
             this.Name = "Agregar_Reserva";
+            this.Text = "Agregar Reserva";
             this.ResumeLayout(false);
             this.PerformLayout();
 

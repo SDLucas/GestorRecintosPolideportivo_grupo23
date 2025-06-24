@@ -12,7 +12,6 @@ namespace Modelos
         public DateTime fecha_reserva { get; set; }
         public int hora_reserva { get; set; }
         public bool pagado { get; set; }
-
         public bool estado { get; set; }
 
         public string EstadoTexto

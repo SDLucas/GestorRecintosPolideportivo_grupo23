@@ -8,16 +8,16 @@ namespace Modelos
 {
     public class Usuario
     {
-        public int id_Usuario { get; set; }
-        public int DNI_Usuario { get; set; }
+        public int id_usuario { get; set; }
+        public int dni_usuario { get; set; }
         public byte[] foto_usuario { get; set; }
-        public string Nombre_Usuario { get; set; }
-        public string Apellido_Usuario { get; set; }
-        public DateTime Fecha_Ingreso { get; set; }
-        public DateTime Fecha_Nacimiento { get; set; }
+        public string nombre_usuario { get; set; }
+        public string apellido_usuario { get; set; }
+        public DateTime fecha_ingreso { get; set; }
+        public DateTime fecha_nacimiento { get; set; }
         public string pass { get; set; }
         public string telefono { get; set; }
-        public int Id_Tipo { get; set; }
-        public string Sexo_Usuario { get; set; }
+        public int id_tipo { get; set; }
+        public string sexo_usuario { get; set; }
     }
 }

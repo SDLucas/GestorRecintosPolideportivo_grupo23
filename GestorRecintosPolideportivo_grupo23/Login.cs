@@ -39,7 +39,7 @@ namespace GestorRecintosPolideportivo_grupo23
 
             if (usuario != null)
             {
-                MessageBox.Show($"¡Bienvenido {usuario.Nombre_Usuario}!", "Login exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"¡Bienvenido {usuario.nombre_usuario}!", "Login exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
 
                 // Abrís tu menú principal o pantalla inicial

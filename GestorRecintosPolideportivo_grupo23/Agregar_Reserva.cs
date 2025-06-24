@@ -59,7 +59,7 @@ namespace GestorRecintosPolideportivo_grupo23
             if (cbRecinto.SelectedItem == null) return;
 
             Recinto recintoSeleccionado = (Recinto)cbRecinto.SelectedItem;
-            int nroRecinto = recintoSeleccionado.NumeroRecinto;
+            int nroRecinto = recintoSeleccionado.nro_recinto;
             DateTime fecha = dtpFecha.Value.Date;
 
             List<int> horasReservadas = reservaControlador.ObtenerHorasReservadas(nroRecinto, fecha);
@@ -103,8 +103,8 @@ namespace GestorRecintosPolideportivo_grupo23
 
                 DateTime fecha = dtpFecha.Value.Date;
                 int id_cliente = ((Cliente)cbCliente.SelectedValue).id_cliente;
-                int nro_recinto = ((Recinto)cbRecinto.SelectedValue).NumeroRecinto;
-                int id_usuario = Sesion.UsuarioActual.id_Usuario;
+                int nro_recinto = ((Recinto)cbRecinto.SelectedValue).nro_recinto;
+                int id_usuario = Sesion.UsuarioActual.id_usuario;
                 int hora = (int)cbHora.SelectedItem;
 
                 int resultado = reservaControlador.agregar_reserva(fecha, id_cliente, nro_recinto, id_usuario, hora);

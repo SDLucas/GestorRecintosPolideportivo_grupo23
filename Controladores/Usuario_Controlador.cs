@@ -43,16 +43,16 @@ namespace Controladores
                         {
                             usuario = new Usuario
                             {
-                                id_Usuario = (int)reader["id_Usuario"],
-                                DNI_Usuario = (int)reader["DNI_Usuario"],
-                                Nombre_Usuario = reader["Nombre_Usuario"].ToString(),
-                                Apellido_Usuario = reader["Apellido_Usuario"].ToString(),
-                                Fecha_Ingreso = Convert.ToDateTime(reader["Fecha_Ingreso"]),
-                                Fecha_Nacimiento = Convert.ToDateTime(reader["Fecha_Nacimiento"]),
+                                id_usuario = (int)reader["id_Usuario"],
+                                dni_usuario = (int)reader["DNI_Usuario"],
+                                nombre_usuario = reader["Nombre_Usuario"].ToString(),
+                                apellido_usuario = reader["Apellido_Usuario"].ToString(),
+                                fecha_ingreso = Convert.ToDateTime(reader["Fecha_Ingreso"]),
+                                fecha_nacimiento = Convert.ToDateTime(reader["Fecha_Nacimiento"]),
                                 pass = reader["pass"].ToString(),
                                 telefono = reader["telefono"].ToString(),
-                                Id_Tipo = (int)reader["Id_Tipo"],
-                                Sexo_Usuario = reader["Sexo_Usuario"].ToString()
+                                id_tipo = (int)reader["Id_Tipo"],
+                                sexo_usuario = reader["Sexo_Usuario"].ToString()
                             };
                         }
                     }

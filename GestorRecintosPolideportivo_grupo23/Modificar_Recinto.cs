@@ -36,16 +36,16 @@ namespace GestorRecintosPolideportivo_grupo23
 
             if (recinto != null)
             {
-                txtNumero.Text = recinto.NumeroRecinto.ToString();
+                txtNumero.Text = recinto.nro_recinto.ToString();
                 txtNumero.Enabled = false; // No se puede modificar la PK
 
-                txtTarifa.Text = recinto.Tarifa.ToString();
-                txtUbicacion.Text = recinto.Ubicacion;
+                txtTarifa.Text = recinto.tarifa_recinto.ToString();
+                txtUbicacion.Text = recinto.ubicacion_recinto;
 
                 // Seleccionar el tipo correspondiente en el ComboBox
                 foreach (Tipo_De_Recinto tipo in cbTipoRecinto.Items)
                 {
-                    if (tipo.id_tipo_recinto == recinto.TipoRecinto.id_tipo_recinto)
+                    if (tipo.id_tipo_recinto == recinto.tipo_recinto.id_tipo_recinto)
                     {
                         cbTipoRecinto.SelectedItem = tipo;
                         break;

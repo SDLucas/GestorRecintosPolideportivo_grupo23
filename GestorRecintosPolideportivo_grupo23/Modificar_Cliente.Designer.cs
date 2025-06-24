@@ -140,7 +140,7 @@ namespace Vistas
 
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Modificar_Cliente";
+            this.Text = "Modificar Cliente";
         }
 
         #endregion

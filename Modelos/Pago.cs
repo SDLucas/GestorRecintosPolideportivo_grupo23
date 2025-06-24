@@ -12,6 +12,7 @@ namespace Modelos
         {
             public int id_pago { get; set; }
             public int id_reserva { get; set; }
+            public int id_medio { get; set; }
             public string nombre_medio { get; set; }
             public string nombre_usuario { get; set; }
             public string apellido_usuario { get; set; }

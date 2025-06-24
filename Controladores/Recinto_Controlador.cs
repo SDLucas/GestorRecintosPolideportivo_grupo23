@@ -62,11 +62,11 @@ namespace Controladores
                         {
                             recintos.Add(new Recinto
                             {
-                                NumeroRecinto = (int)reader["nro_recinto"],
-                                Tarifa = (float)(double)reader["tarifa_hora"],
-                                Ubicacion = reader["ubicacion_recinto"].ToString(),
-                                Habilitado = (bool)reader["habilitado"],
-                                TipoRecinto = new Tipo_De_Recinto
+                                nro_recinto = (int)reader["nro_recinto"],
+                                tarifa_recinto = (float)(double)reader["tarifa_hora"],
+                                ubicacion_recinto = reader["ubicacion_recinto"].ToString(),
+                                habilitado = (bool)reader["habilitado"],
+                                tipo_recinto = new Tipo_De_Recinto
                                 {
                                     id_tipo_recinto = (int)reader["id_tipo_recinto"],
                                     nombre_tipo_recinto = reader["nombre_tipo_recinto"].ToString()
@@ -98,11 +98,11 @@ namespace Controladores
                         {
                             recintos.Add(new Recinto
                             {
-                                NumeroRecinto = (int)reader["nro_recinto"],
-                                Tarifa = (float)(double)reader["tarifa_hora"],
-                                Ubicacion = reader["ubicacion_recinto"].ToString(),
-                                Habilitado = (bool)reader["habilitado"],
-                                TipoRecinto = new Tipo_De_Recinto
+                                nro_recinto = (int)reader["nro_recinto"],
+                                tarifa_recinto = (float)(double)reader["tarifa_hora"],
+                                ubicacion_recinto = reader["ubicacion_recinto"].ToString(),
+                                habilitado = (bool)reader["habilitado"],
+                                tipo_recinto = new Tipo_De_Recinto
                                 {
                                     id_tipo_recinto = (int)reader["id_tipo_recinto"],
                                     nombre_tipo_recinto = reader["nombre_tipo_recinto"].ToString()
@@ -135,11 +135,11 @@ namespace Controladores
                         {
                             recinto = new Recinto
                             {
-                                NumeroRecinto = (int)reader["nro_recinto"],
-                                Tarifa = (float)(double)reader["tarifa_hora"],
-                                Ubicacion = reader["ubicacion_recinto"].ToString(),
-                                Habilitado = (bool)reader["habilitado"],
-                                TipoRecinto = new Tipo_De_Recinto
+                                nro_recinto = (int)reader["nro_recinto"],
+                                tarifa_recinto = (float)(double)reader["tarifa_hora"],
+                                ubicacion_recinto = reader["ubicacion_recinto"].ToString(),
+                                habilitado = (bool)reader["habilitado"],
+                                tipo_recinto = new Tipo_De_Recinto
                                 {
                                     id_tipo_recinto = (int)reader["id_tipo_recinto"],
                                     nombre_tipo_recinto = reader["nombre_tipo_recinto"].ToString()

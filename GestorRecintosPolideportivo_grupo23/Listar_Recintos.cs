@@ -121,7 +121,7 @@ namespace GestorRecintosPolideportivo_grupo23
             string columna = dataGridViewRecintos.Columns[e.ColumnIndex].Name;
             int numeroRecinto = Convert.ToInt32(dataGridViewRecintos.Rows[e.RowIndex].Cells["NumeroRecinto"].Value);
 
-            var recinto = listaRecintos.FirstOrDefault(r => r.NumeroRecinto == numeroRecinto);
+            var recinto = listaRecintos.FirstOrDefault(r => r.nro_recinto == numeroRecinto);
 
             if (recinto == null)
                 return;
@@ -134,7 +134,7 @@ namespace GestorRecintosPolideportivo_grupo23
             }
             else if (columna == "AccionEstado")
             {
-                if (recinto.Habilitado)
+                if (recinto.habilitado)
                 {
                     recinto_controlador.DeshabilitarRecintoPorNumero(numeroRecinto);
                 }
@@ -154,17 +154,17 @@ namespace GestorRecintosPolideportivo_grupo23
             {
                 string nombreColumna = dataGridViewRecintos.Columns[e.ColumnIndex].Name;
                 int numeroRecinto = Convert.ToInt32(dataGridViewRecintos.Rows[e.RowIndex].Cells["NumeroRecinto"].Value);
-                var recinto = listaRecintos.FirstOrDefault(r => r.NumeroRecinto == numeroRecinto);
+                var recinto = listaRecintos.FirstOrDefault(r => r.nro_recinto == numeroRecinto);
 
                 if (recinto != null)
                 {
                     if (nombreColumna == "TipoRecinto")
                     {
-                        e.Value = recinto.TipoRecinto?.nombre_tipo_recinto;
+                        e.Value = recinto.tipo_recinto?.nombre_tipo_recinto;
                     }
                     else if (nombreColumna == "AccionEstado")
                     {
-                        if (recinto.Habilitado)
+                        if (recinto.habilitado)
                         {
                             e.Value = "Deshabilitar";
                         }
